@@ -59,7 +59,7 @@ noFlip="FALSE"
 
 #dark allure level 30?
 learnset="""
-static const struct LevelUpMove sCYuriaLevelUpLearnset[] = {
+static const struct LevelUpMove s""" + species + """LevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE(26, MOVE_POWER_GEM),
