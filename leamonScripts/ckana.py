@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #do not put spaces between the variable and the value!
 #e.g. SPECIES=CYuria, not SPECIES = "CYuria" (the quotes are not needed)
-species="CKarin"
-images="leamon/ckarin"
+species="CKana"
+images="leamon/ckana"
 animate=[(0,1)] #must be a list of tuples, like [(0,10),(1,20)]
 frontSpriteSize = (64,64)
 frontYOffset = 0
@@ -13,36 +13,36 @@ backAnim = "BACK_ANIM_H_VIBRATE"
 iconPalette = 0 #0, 1 or 2
 #don't put newlines in here
 pokedexText = [
-"Slowly recovering her self-control.",
+"Vulnerable to chaos.",
 "",
 "",
 ""]
 
 pokedexCategory="Fox-deer"
-pokedexHeight=17 #in meters/10
-pokedexWeight=530 #in kilos/10
+pokedexHeight=13 #in meters/10
+pokedexWeight=310 #in kilos/10
 pokemonScale=256
 pokemonOffset=0
 trainerScale=256
 trainerOffset=0
 
 
-baseHP=40
-baseAttack=50
-baseDefense=30
-baseSpAttack=60
-baseSpDefense=90
+baseHP=30
+baseAttack=20
+baseDefense=20
+baseSpAttack=100
+baseSpDefense=100
 baseSpeed=70
-type1="TYPE_GHOST"
-type2="TYPE_FAIRY"
+type1="TYPE_GROUND"
+type2="TYPE_GHOST"
 catchRate=150
 expYield=70
 evHP=0
 evAttack=0
 evDefense=0 
 evSpeed=0
-evSpAttack=0
-evSpDefense=1
+evSpAttack=1
+evSpDefense=0
 item1="ITEM_NONE"
 item2="ITEM_NONE"
 genderRatio="PERCENT_FEMALE(50)"
@@ -62,9 +62,10 @@ learnset="""
 static const struct LevelUpMove s""" + species + """LevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
-    LEVEL_UP_MOVE(26, MOVE_POWER_GEM),
-    LEVEL_UP_MOVE(41, MOVE_CALM_MIND),
-    LEVEL_UP_MOVE(46, MOVE_SHADOW_BALL),
+    LEVEL_UP_MOVE( 6, MOVE_DOUBLE_SLAP),
+    LEVEL_UP_MOVE(26, MOVE_EARTH_POWER),
+    LEVEL_UP_MOVE(41, MOVE_HEALING_WISH),
+    LEVEL_UP_MOVE(46, MOVE_AURORA_BEAM),
     LEVEL_UP_END
 };"""
 #declare sprites
