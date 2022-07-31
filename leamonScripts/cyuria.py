@@ -373,7 +373,7 @@ with open("include/constants/pokedex.h", "w") as out_file:
     for line in buf:
         if ("NATIONAL_DEX_" + previousLastNatMon + ",") in line:
             line = line + "    NATIONAL_DEX_" + species.upper() + ",\n"
-        if ("NATIONAL_DEX_" + previousLastHoennMon + ",") in line:
+        if ("HOENN_DEX_" + previousLastHoennMon + ",") in line:
             line = line + "    HOENN_DEX_" + species.upper() + ",\n"
         out_file.write(line)
 
