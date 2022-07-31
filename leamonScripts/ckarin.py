@@ -344,18 +344,32 @@ with open("src/data/text/species_names.h", "w") as out_file:
         out_file.write(line)
 
 #define pokedex entry
+previousLastNatMon = "CALYREX"
+previousLastHoennMon = "DEOXYS"
 with open("include/constants/pokedex.h", "r") as in_file:
     buf = in_file.readlines()
             
 with open("include/constants/pokedex.h", "w") as out_file:
     for line in buf:
-        if ("NATIONAL_DEX_CALYREX,") in line:
+        if ("#define NATIONAL_DEX_COUNT") in line:
+            previousLastNatMon = line.split("_")[-1].strip()
+        if ("#define HOENN_DEX_COUNT") in line:
+            previousLastHoennMon = line.split("_")[-1].strip()
+        out_file.write(line)
+
+with open("include/constants/pokedex.h", "r") as in_file:
+    buf = in_file.readlines()
+            
+with open("include/constants/pokedex.h", "w") as out_file:
+    for line in buf:
+        if ("NATIONAL_DEX_" + previousLastNatMon + ",") in line:
             line = line + "    NATIONAL_DEX_" + species.upper() + ",\n"
-        if ("HOENN_DEX_DEOXYS,") in line:
+        if ("NATIONAL_DEX_" + previousLastHoennMon + ",") in line:
             line = line + "    HOENN_DEX_" + species.upper() + ",\n"
         out_file.write(line)
 
-#TODO: this part is spotty
+
+
 with open("include/constants/pokedex.h", "r") as in_file:
     buf = in_file.readlines()
             
@@ -421,7 +435,7 @@ with open("src/data/pokemon/pokedex_orders.h", "r") as in_file:
             
 with open("src/data/pokemon/pokedex_orders.h", "w") as out_file:
     for line in buf:
-        if ("NATIONAL_DEX_CALYREX,") in line:
+        if ("    NATIONAL_DEX_CALYREX,") in line:
             line = line + "    NATIONAL_DEX_" + species.upper() + ",\n"
         out_file.write(line)
 
