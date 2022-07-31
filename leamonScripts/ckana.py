@@ -355,9 +355,10 @@ with open("include/constants/pokedex.h", "w") as out_file:
         if ("#define NATIONAL_DEX_COUNT") in line:
             previousLastNatMon = line.split("_")[-1].strip()
         if ("#define HOENN_DEX_COUNT") in line:
-            previousLastHoennMon = line.split("_")[-1].strip()
+            previousLastHoennMon = line.split("_")[-1].split(" ")[0]
         out_file.write(line)
 
+print(previousLastNatMon, previousLastHoennMon)
 with open("include/constants/pokedex.h", "r") as in_file:
     buf = in_file.readlines()
             
