@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #do not put spaces between the variable and the value!
 #e.g. SPECIES=CYuria, not SPECIES = "CYuria" (the quotes are not needed)
-species="CYuria"
-images="leamon/cyuria"
+species="CGemma"
+images="leamon/cgemma"
 animate=[(0,1)] #must be a list of tuples, like [(0,10),(1,20)]
 frontSpriteSize = (64,64)
 frontYOffset = 0
@@ -13,66 +13,58 @@ backAnim = "BACK_ANIM_H_VIBRATE"
 iconPalette = 0 #0, 1 or 2
 #don't put newlines in here
 pokedexText = [
-"Always looking to score.",
+"Has trouble showing expressions.",
 "",
 "",
 ""]
 
-pokedexCategory="Fox-deer"
+pokedexCategory="Crystal Fox"
 pokedexHeight=15 #in meters/10
-pokedexWeight=410 #in kilos/10
+pokedexWeight=800 #in kilos/10
 pokemonScale=256
 pokemonOffset=0
 trainerScale=256
 trainerOffset=0
 
 
-baseHP=40
+baseHP=50
 baseAttack=70
-baseDefense=30
-baseSpAttack=25
-baseSpDefense=40
-baseSpeed=85
-type1="TYPE_DARK"
-type2="TYPE_DARK"
+baseDefense=90
+baseSpAttack=50
+baseSpDefense=60
+baseSpeed=50
+type1="TYPE_ROCK"
+type2="TYPE_ROCK"
 catchRate=150
 expYield=70
 evHP=0
 evAttack=0
-evDefense=0 
-evSpeed=1
+evDefense=1
+evSpeed=0
 evSpAttack=0
 evSpDefense=0
 item1="ITEM_NONE"
 item2="ITEM_NONE"
-genderRatio="PERCENT_FEMALE(50)"
+genderRatio="PERCENT_FEMALE(25)"
 eggCycles=20
-friendship=100
+friendship=30
 growthRate="GROWTH_MEDIUM_SLOW"
 eggGroup1="EGG_GROUP_HUMAN_LIKE"
 eggGroup2="EGG_GROUP_HUMAN_LIKE"
-ability1="ABILITY_INSOMNIA"
+ability1="ABILITY_AMULET_LINK"
 ability2="ABILITY_NONE"
 ability3="ABILITY_NONE"
-bodyColor="BODY_COLOR_BROWN"
+bodyColor="BODY_COLOR_GREEN"
 noFlip="FALSE"
 
 #dark allure level 30?
+#tweak her moveset
 learnset="""
 static const struct LevelUpMove s""" + species + """LevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
-    LEVEL_UP_MOVE( 1, MOVE_LEER),
-    LEVEL_UP_MOVE( 6, MOVE_QUICK_ATTACK),
-    LEVEL_UP_MOVE(12, MOVE_BITE),
-    LEVEL_UP_MOVE(16, MOVE_CHARM),
-    LEVEL_UP_MOVE(18, MOVE_PURSUIT),
-    LEVEL_UP_MOVE(23, MOVE_SWAGGER),
-    LEVEL_UP_MOVE(26, MOVE_BEAT_UP),
-    LEVEL_UP_MOVE(29, MOVE_FACADE),
-    LEVEL_UP_MOVE(33, MOVE_U_TURN),
-    LEVEL_UP_MOVE(41, MOVE_RETALIATE),
-    LEVEL_UP_MOVE(46, MOVE_SUCKER_PUNCH),
-    LEVEL_UP_MOVE(55, MOVE_FOUL_PLAY),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_STONE_EDGE),
+    LEVEL_UP_MOVE( 5, MOVE_RECOVER),
+    LEVEL_UP_MOVE( 6, MOVE_DAZZLING_GLEAM),
     LEVEL_UP_END
 };"""
 
