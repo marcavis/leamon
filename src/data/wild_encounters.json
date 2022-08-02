@@ -44,27 +44,27 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_CKARIN"
+                "species": "SPECIES_POOCHYENA"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_CKANA"
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_WURMPLE"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_CGEMMA"
-              },
-              {
-                "min_level": 2,
-                "max_level": 4,
-                "species": "SPECIES_CYURIA"
+                "species": "SPECIES_ZIGZAGOON"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_CYURIA"
+                "species": "SPECIES_ZIGZAGOON"
               },
               {
                 "min_level": 3,
