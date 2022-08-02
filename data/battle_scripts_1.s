@@ -404,6 +404,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
 	.4byte BattleScript_EffectSkyDrop                 @ EFFECT_SKY_DROP
+	.4byte BattleScript_EffectDarkAllure              @ EFFECT_DARK_ALLURE
+
   
 BattleScript_EffectSkyDrop:
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_SkyDropTurn2
@@ -2018,6 +2020,21 @@ BattleScript_GrowthEnd:
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectSoak:
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	jumpifability BS_TARGET, ABILITY_MULTITYPE, BattleScript_ButItFailed
+	jumpifability BS_TARGET, ABILITY_RKS_SYSTEM, BattleScript_ButItFailed
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	trysoak BattleScript_ButItFailed
+	printstring STRINGID_TARGETCHANGEDTYPE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectDarkAllure:
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
