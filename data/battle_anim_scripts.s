@@ -845,39 +845,32 @@ gBattleAnims_Special::
 	.4byte Special_CriticalCaptureBallThrow @ B_ANIM_CRITICAL_CAPTURE_THROW
 
 @@@@@@@@@@@@@@@@@@@@@@@ LEAMON @@@@@@@@@@@@@@@@@@@@@@
-Move_DARK_ALLURE:
-	loadspritegfx ANIM_TAG_SMALL_BUBBLES
-	loadspritegfx ANIM_TAG_WATER_IMPACT
-	monbg ANIM_TARGET
-	splitbgprio ANIM_TARGET
-	setalpha 12, 8
-	createsprite gWaterGunProjectileSpriteTemplate, ANIM_ATTACKER, 2, 20, 0, 0, 0, 40, -25
-	playsewithpan SE_M_BUBBLE, 192
-	delay 2
-	createsprite gWaterGunProjectileSpriteTemplate, ANIM_ATTACKER, 2, 20, 0, 5, 0, 40, -25
-	playsewithpan SE_M_BUBBLE, 192
-	delay 2
-	createsprite gWaterGunProjectileSpriteTemplate, ANIM_ATTACKER, 2, 20, 0, -5, 0, 40, -25
-	playsewithpan SE_M_BUBBLE, 192
-	delay 30
-	playsewithpan SE_M_WATERFALL, 63
-	createvisualtask AnimTask_ShakeMon2, 5, 1, 4, 0, 17, 1
-	createvisualtask AnimTask_BlendColorCycle, 2, 4, 1, 2, 0, 12, RGB_BLUE
-	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 1, 1
-	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 0, 0
-	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 0, 0
-	delay 2
-	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 5, 0, 1, 1
-	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 5, 0
-	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 5, 0
-	delay 2
-	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, -5, 0, 1, 1
-	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, -5, 0
-	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, -5, 0
-	delay 2
+Move_DARK_ALLURE::
+	loadspritegfx ANIM_TAG_POISON_POWDER
+	loadspritegfx ANIM_TAG_WATER_GUN
+	loopsewithpan SE_M_MORNING_SUN, SOUND_PAN_ATTACKER 0xE 0x8
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xffe2 0xffea 0x75 0x50 0x5 0x1
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xa 0xffea 0x75 0x50 0xfffb 0x1
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xffe7 0xffea 0x75 0x70 0x5 0x3
+	delay 0xf
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfffb 0xffea 0x75 0x50 0xfffb 0x1
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0x5 0xffea 0x75 0x60 0x5 0x1
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0x0 0xffea 0x75 0x45 0xfffb 0x1
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xfff1 0xffea 0x75 0x70 0x5 0x2
+	delay 0x1e
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfff1 0xffea 0x75 0x70 0x5 0x2
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xf 0xffea 0x75 0x50 0xfffb 0x1
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfff6 0xffea 0x75 0x60 0x7 0x2
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xfffb 0xffea 0x75 0x5a 0xfff8 0x0
+	delay 0x14
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfff6 0xffea 0x75 0x50 0xfffb 0x1
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0x0 0xffea 0x75 0x59 0x5 0x2
+	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0x14 0xffea 0x75 0x70 0xfff8 0x2
+	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0x5 0xffea 0x75 0x50 0x5 0x1
 	waitforvisualfinish
-	clearmonbg ANIM_TARGET
-	blendoff
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
+	launchtask AnimTask_ScaleMonAndRestore 0x5 0x5 0xfffa 0xfffa 0xf 0x1 0x1
+	waitforvisualfinish
 	end
 
 
