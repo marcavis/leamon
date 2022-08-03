@@ -782,6 +782,7 @@ gBattleAnims_Moves::
 
 @@@@ LEAMON @@@@
 	.4byte Move_DARK_ALLURE
+	.4byte Move_BLAZING_EDGE
 
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
@@ -30615,6 +30616,7 @@ SoulStealingSevenStarStrikeExplosion:
 
 @@@@@@@@@@@@@@@@@@@@@@@ LEAMON @@@@@@@@@@@@@@@@@@@@@@
 Move_DARK_ALLURE::
+Move_BLAZING_EDGE::
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
 	setalpha 12, 8

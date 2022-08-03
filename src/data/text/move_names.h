@@ -757,6 +757,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_GLACIAL_LANCE] = _("Glacial Lance"),
     [MOVE_ASTRAL_BARRAGE] = _("Astral Barrage"),
     [MOVE_EERIE_SPELL] = _("Eerie Spell"),
+    [MOVE_DARK_ALLURE] = _("Dark Allure"),
+    [MOVE_BLAZING_EDGE] = _("Blazing Edge"),
 };
 #else
 // 12 letters
@@ -1518,6 +1520,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_ASTRAL_BARRAGE] = _("AstrlBarrage"),
     [MOVE_EERIE_SPELL] = _("Eerie Spell"),
     [MOVE_DARK_ALLURE] = _("Dark Allure"),
+    [MOVE_BLAZING_EDGE] = _("Blazing Edge"),
 };
 #endif
 

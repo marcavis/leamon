@@ -2982,6 +2982,10 @@ static const u8 sDarkAllureDescription[] = _(
     "Changes foe's type to DARK,\n"
     "if not already. Restores HP.");
 
+static const u8 sBlazingEdgeDescription[] = _(
+    "A violent slash that does\n"
+    "Steel and Fire-type damage.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3745,4 +3749,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ASTRAL_BARRAGE - 1] = sAstralBarrageDescription,
     [MOVE_EERIE_SPELL - 1] = sEerieSpellDescription,
     [MOVE_DARK_ALLURE - 1] = sDarkAllureDescription,
+    [MOVE_BLAZING_EDGE - 1] = sBlazingEdgeDescription,
 };

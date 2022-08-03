@@ -784,8 +784,9 @@
 
 // Leamon moves
 #define MOVE_DARK_ALLURE 755
+#define MOVE_BLAZING_EDGE 756
 
-#define MOVES_COUNT_GEN8 756
+#define MOVES_COUNT_GEN8 757
 
 #define MOVES_COUNT         MOVES_COUNT_GEN8
 
