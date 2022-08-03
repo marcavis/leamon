@@ -2247,7 +2247,7 @@ BattleScript_AuralysisTrySpDef::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AuralysisTryAccuracy::
-	setstatchanger STAT_ACC, 1, FALSE
+	setstatchanger STAT_ACC, 2, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_AuralysisEnd
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_AuralysisEnd
 	printfromtable gStatUpStringIds
