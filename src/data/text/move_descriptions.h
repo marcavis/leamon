@@ -2986,6 +2986,10 @@ static const u8 sBlazingEdgeDescription[] = _(
     "A violent slash that does\n"
     "Steel and Fire-type damage.");
 
+static const u8 sAuralysisDescription[] = _(
+    "Sharply boosts Accuracy, Sp.\n"
+    "Atk, Sp. Def. 2nd turn: rest.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3750,4 +3754,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_EERIE_SPELL - 1] = sEerieSpellDescription,
     [MOVE_DARK_ALLURE - 1] = sDarkAllureDescription,
     [MOVE_BLAZING_EDGE - 1] = sBlazingEdgeDescription,
+    [MOVE_AURALYSIS - 1] = sAuralysisDescription,
 };

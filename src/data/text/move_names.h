@@ -759,6 +759,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_EERIE_SPELL] = _("Eerie Spell"),
     [MOVE_DARK_ALLURE] = _("Dark Allure"),
     [MOVE_BLAZING_EDGE] = _("Blazing Edge"),
+    [MOVE_AURALYSIS] = _("Auralysis"),
 };
 #else
 // 12 letters
@@ -1521,6 +1522,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_EERIE_SPELL] = _("Eerie Spell"),
     [MOVE_DARK_ALLURE] = _("Dark Allure"),
     [MOVE_BLAZING_EDGE] = _("Blazing Edge"),
+    [MOVE_AURALYSIS] = _("Auralysis"),
 };
 #endif
 
