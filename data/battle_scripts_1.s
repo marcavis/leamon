@@ -2203,7 +2203,7 @@ BattleScript_EffectDarkAllure:
 	jumpifability BS_TARGET, ABILITY_RKS_SYSTEM, BattleScript_ButItFailed
 	jumpifsubstituteblocks BattleScript_ButItFailed
 	jumpiftype BS_TARGET, TYPE_DARK, BattleScript_ButItFailed
-	@attackanimation
+	attackanimation
 	waitanimation
 	trysoak BattleScript_ButItFailed
 	printstring STRINGID_TARGETCHANGEDTYPE

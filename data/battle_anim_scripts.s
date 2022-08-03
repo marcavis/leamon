@@ -779,6 +779,10 @@ gBattleAnims_Moves::
 	.4byte Move_GLACIAL_LANCE
 	.4byte Move_ASTRAL_BARRAGE
 	.4byte Move_EERIE_SPELL
+
+@@@@ LEAMON @@@@
+	.4byte Move_DARK_ALLURE
+
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -815,10 +819,7 @@ gBattleAnims_Moves::
 	.4byte Move_MENACING_MOONRAZE_MAELSTROM
 	.4byte Move_LIGHT_THAT_BURNS_THE_SKY
 	.4byte Move_SOUL_STEALING_7_STAR_STRIKE
-@@@ Last Move - cannot be reached
 
-@@@@ LEAMON @@@@
-	.4byte Move_DARK_ALLURE
 	.4byte Move_COUNT
 
 	.align 2
@@ -884,34 +885,7 @@ gBattleAnims_Special::
 	.4byte Special_MonToSubstitute          @ B_ANIM_MON_TO_SUBSTITUTE
 	.4byte Special_CriticalCaptureBallThrow @ B_ANIM_CRITICAL_CAPTURE_THROW
 
-@@@@@@@@@@@@@@@@@@@@@@@ LEAMON @@@@@@@@@@@@@@@@@@@@@@
-Move_DARK_ALLURE::
-	loadspritegfx ANIM_TAG_POISON_POWDER
-	loadspritegfx ANIM_TAG_WATER_GUN
-	loopsewithpan SE_M_MORNING_SUN, SOUND_PAN_ATTACKER 0xE 0x8
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xffe2 0xffea 0x75 0x50 0x5 0x1
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xa 0xffea 0x75 0x50 0xfffb 0x1
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xffe7 0xffea 0x75 0x70 0x5 0x3
-	delay 0xf
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfffb 0xffea 0x75 0x50 0xfffb 0x1
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0x5 0xffea 0x75 0x60 0x5 0x1
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0x0 0xffea 0x75 0x45 0xfffb 0x1
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xfff1 0xffea 0x75 0x70 0x5 0x2
-	delay 0x1e
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfff1 0xffea 0x75 0x70 0x5 0x2
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xf 0xffea 0x75 0x50 0xfffb 0x1
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfff6 0xffea 0x75 0x60 0x7 0x2
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0xfffb 0xffea 0x75 0x5a 0xfff8 0x0
-	delay 0x14
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0xfff6 0xffea 0x75 0x50 0xfffb 0x1
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0x0 0xffea 0x75 0x59 0x5 0x2
-	launchtemplate gMagicPowderBluePowderTemplate 0x82 0x6 0x14 0xffea 0x75 0x70 0xfff8 0x2
-	launchtemplate gPoisonPowderParticleSpriteTemplate 0x82 0x6 0x5 0xffea 0x75 0x50 0x5 0x1
-	waitforvisualfinish
-	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
-	launchtask AnimTask_ScaleMonAndRestore 0x5 0x5 0xfffa 0xfffa 0xf 0x1 0x1
-	waitforvisualfinish
-	end
+
 
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 4 @@@@@@@@@@@@@@@@@@@@@@@
@@ -30638,3 +30612,16 @@ SoulStealingSevenStarStrikeExplosion:
 	launchtemplate gSoulStealExplosionSpriteTemplate 0x83 0x4 0x10 0x10 ANIM_TARGET 0x1
 	delay 0x6
 	return
+
+@@@@@@@@@@@@@@@@@@@@@@@ LEAMON @@@@@@@@@@@@@@@@@@@@@@
+Move_DARK_ALLURE::
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_TARGET
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
