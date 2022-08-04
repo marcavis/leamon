@@ -2990,6 +2990,42 @@ static const u8 sAuralysisDescription[] = _(
     "Sharply boosts Accuracy, Sp.\n"
     "Atk, Sp. Def. 2nd turn: rest.");
 
+static const u8 sVoidFlameDescription[] = _(
+    "Hits with jet-black flames\n"
+    "that can cause a burn.");
+
+static const u8 sVoidTrailDescription[] = _(
+    "A piercingly fast sprint.\n"
+    "Uses Speed to cause damage.");
+
+static const u8 sPrismFeatherDescription[] = _(
+    "Dazzling multicolored beams.\n"
+    "Always effective, always hits.");
+
+static const u8 sThunderCallDescription[] = _(
+    "A thunderous yeall that may\n"
+    "cause flinching.");
+
+static const u8 sCrystalTombDescription[] = _(
+    "Encases the foe in magic\n"
+    "crystal. May cause freezing.");
+
+static const u8 sConniptionDescription[] = _(
+    "Attacks with intense anger.\n"
+    "Fails if at full health.");
+
+static const u8 sLucentBeamDescription[] = _(
+    "Intense light that heals\n"
+    "the foe's status conditions.");
+
+static const u8 sPinDownDescription[] = _(
+    "Shoots an arrow that may\n"
+    "lower the foe's speed.");
+
+static const u8 sThunderFlashDescription[] = _(
+    "Attacks in a flash of light.\n"
+    "This move always goes first.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3755,4 +3791,13 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DARK_ALLURE - 1] = sDarkAllureDescription,
     [MOVE_BLAZING_EDGE - 1] = sBlazingEdgeDescription,
     [MOVE_AURALYSIS - 1] = sAuralysisDescription,
+    [MOVE_VOID_FLAME - 1] = sVoidFlameDescription,
+    [MOVE_VOID_TRAIL - 1] = sVoidTrailDescription,
+    [MOVE_PRISM_FEATHER - 1] = sPrismFeatherDescription,
+    [MOVE_THUNDER_CALL - 1] = sThunderCallDescription,
+    [MOVE_CRYSTAL_TOMB - 1] = sCrystalTombDescription,
+    [MOVE_CONNIPTION - 1] = sConniptionDescription,
+    [MOVE_LUCENT_BEAM - 1] = sLucentBeamDescription,
+    [MOVE_PIN_DOWN - 1] = sPinDownDescription,
+    [MOVE_THUNDER_FLASH - 1] = sThunderFlashDescription,
 };

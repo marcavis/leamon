@@ -784,6 +784,15 @@ gBattleAnims_Moves::
 	.4byte Move_DARK_ALLURE
 	.4byte Move_BLAZING_EDGE
 	.4byte Move_AURALYSIS
+	.4byte Move_VOID_FLAME
+	.4byte Move_VOID_TRAIL
+	.4byte Move_PRISM_FEATHER
+	.4byte Move_THUNDER_CALL
+	.4byte Move_CRYSTAL_TOMB
+	.4byte Move_CONNIPTION
+	.4byte Move_LUCENT_BEAM
+	.4byte Move_PIN_DOWN
+	.4byte Move_THUNDER_FLASH
 
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
@@ -30748,6 +30757,15 @@ SoulStealingSevenStarStrikeExplosion:
 @@@@@@@@@@@@@@@@@@@@@@@ LEAMON @@@@@@@@@@@@@@@@@@@@@@
 Move_DARK_ALLURE::
 Move_BLAZING_EDGE::
+Move_VOID_FLAME::
+Move_VOID_TRAIL::
+Move_PRISM_FEATHER::
+Move_THUNDER_CALL::
+Move_CRYSTAL_TOMB::
+Move_CONNIPTION::
+Move_LUCENT_BEAM::
+Move_PIN_DOWN::
+Move_THUNDER_FLASH::
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
 	setalpha 12, 8

@@ -760,6 +760,15 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_DARK_ALLURE] = _("Dark Allure"),
     [MOVE_BLAZING_EDGE] = _("Blazing Edge"),
     [MOVE_AURALYSIS] = _("Auralysis"),
+    [MOVE_VOID_FLAME] = _("Void Flame"),
+    [MOVE_VOID_TRAIL] = _("Void Trail"),
+    [MOVE_PRISM_FEATHER] = _("Prism Feather"),
+    [MOVE_THUNDER_CALL] = _("Thunder Call"),
+    [MOVE_CRYSTAL_TOMB] = _("Crystal Tomb"),
+    [MOVE_CONNIPTION] = _("Conniption"),
+    [MOVE_LUCENT_BEAM] = _("Lucent Beam"),
+    [MOVE_PIN_DOWN] = _("Pin Down"),
+    [MOVE_THUNDER_FLASH] = _("Thunder Flash"),
 };
 #else
 // 12 letters
@@ -1523,6 +1532,15 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_DARK_ALLURE] = _("Dark Allure"),
     [MOVE_BLAZING_EDGE] = _("Blazing Edge"),
     [MOVE_AURALYSIS] = _("Auralysis"),
+    [MOVE_VOID_FLAME] = _("Void Flame"),
+    [MOVE_VOID_TRAIL] = _("Void Trail"),
+    [MOVE_PRISM_FEATHER] = _("PrismFeather"),
+    [MOVE_THUNDER_CALL] = _("Thunder Call"),
+    [MOVE_CRYSTAL_TOMB] = _("Crystal Tomb"),
+    [MOVE_CONNIPTION] = _("Conniption"),
+    [MOVE_LUCENT_BEAM] = _("Lucent Beam"),
+    [MOVE_PIN_DOWN] = _("Pin Down"),
+    [MOVE_THUNDER_FLASH] = _("ThunderFlash"),
 };
 #endif
 
