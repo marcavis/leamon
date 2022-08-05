@@ -13879,7 +13879,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_CONNIPTION] =
     {
-        .effect = EFFECT_CONNIPTION, //TODO:CUSTOM
+        .effect = EFFECT_CONNIPTION, 
         .power = 120,
         .type = TYPE_GHOST,
         .accuracy = 100,
@@ -13893,8 +13893,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_LUCENT_BEAM] =
     {
-        .effect = EFFECT_ERUPTION, //TODO:CUSTOM
-        .power = 100,
+        .effect = EFFECT_LUCENT_BEAM,
+        .power = 35, //meant to be 100
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 10,

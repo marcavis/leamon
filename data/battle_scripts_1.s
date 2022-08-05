@@ -416,6 +416,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDarkAllure              @ EFFECT_DARK_ALLURE
 	.4byte BattleScript_EffectAuralysis               @ EFFECT_AURALYSIS
 	.4byte BattleScript_EffectConniption              @ EFFECT_CONNIPTION
+	.4byte BattleScript_EffectLucentBeam              @ EFFECT_LUCENT_BEAM
 
 BattleScript_EffectSteelBeam::
 	attackcanceler
@@ -5590,6 +5591,12 @@ BattleScript_EffectSparklingAria:
 	setmoveeffect MOVE_EFFECT_REMOVE_STATUS | MOVE_EFFECT_CERTAIN
 	goto BattleScript_EffectHit
 
+BattleScript_EffectLucentBeam:
+	jumpifsubstituteblocks BattleScript_EffectHit
+	setmoveeffect MOVE_EFFECT_REMOVE_ANY_STATUS | MOVE_EFFECT_CERTAIN
+	goto BattleScript_EffectHit
+
+
 BattleScript_EffectFollowMe::
 	attackcanceler
 	attackstring
@@ -7933,6 +7940,12 @@ BattleScript_CurseTurnDmg::
 
 BattleScript_TargetPRLZHeal::
 	printstring STRINGID_PKMNHEALEDPARALYSIS
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_TARGET
+	return
+
+BattleScript_TargetAnyStatusHeal::
+	printstring STRINGID_ATTACKERCUREDTARGETSTATUS
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_TARGET
 	return
