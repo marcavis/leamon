@@ -13879,8 +13879,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_CONNIPTION] =
     {
-        .effect = EFFECT_ERUPTION, //TODO:CUSTOM
-        .power = 130,
+        .effect = EFFECT_CONNIPTION, //TODO:CUSTOM
+        .power = 120,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 10,

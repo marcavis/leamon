@@ -415,6 +415,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectTerrainHit              @ EFFECT_DAMAGE_SET_TERRAIN
 	.4byte BattleScript_EffectDarkAllure              @ EFFECT_DARK_ALLURE
 	.4byte BattleScript_EffectAuralysis               @ EFFECT_AURALYSIS
+	.4byte BattleScript_EffectConniption              @ EFFECT_CONNIPTION
 
 BattleScript_EffectSteelBeam::
 	attackcanceler
@@ -2212,7 +2213,19 @@ BattleScript_EffectDarkAllure:
 	tryhealhalfhealth BattleScript_AlreadyAtFullHp, BS_ATTACKER
 	goto BattleScript_RestoreHp
 
-@todo change this 
+BattleScript_EffectConniption:
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	jumpiffullhp BS_ATTACKER, BattleScript_ConniptionFailed
+	goto BattleScript_HitFromCritCalc
+BattleScript_ConniptionFailed:
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CONNIPTIONFAILEDMESSAGE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectAuralysis:
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_AuralysisSecondTurn
 	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING, BattleScript_AuralysisSecondTurn
@@ -2254,6 +2267,7 @@ BattleScript_AuralysisTryAccuracy::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AuralysisEnd::
 	goto BattleScript_MoveEnd
+
 
 
 BattleScript_EffectReflectType:
