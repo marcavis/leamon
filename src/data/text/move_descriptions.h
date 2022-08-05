@@ -3000,7 +3000,7 @@ static const u8 sVoidTrailDescription[] = _(
 
 static const u8 sPrismFeatherDescription[] = _(
     "Dazzling multicolored beams.\n"
-    "Always effective, always hits.");
+    "Ignores type effectiveness.");
 
 static const u8 sThunderCallDescription[] = _(
     "A thunderous yeall that may\n"

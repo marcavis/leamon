@@ -9295,6 +9295,11 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         modifier = UQ_4_12(1.0);
     }
 
+    if (gBattleMoves[move].effect == EFFECT_PRISM_FEATHER) //this move is always effective
+    {
+        modifier = UQ_4_12(1.0);
+    }
+
     if (((defAbility == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0))
         || (defAbility == ABILITY_TELEPATHY && battlerDef == BATTLE_PARTNER(battlerAtk)))
         && gBattleMoves[move].power)
