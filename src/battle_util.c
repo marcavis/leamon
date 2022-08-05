@@ -8649,6 +8649,11 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
         atkStat = gBattleMons[battlerAtk].defense;
         atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
     }
+    else if (gBattleMoves[move].effect == EFFECT_VOID_TRAIL)
+    {
+        atkStat = gBattleMons[battlerAtk].speed;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_SPEED];
+    }
     else
     {
         if (IS_MOVE_PHYSICAL(move))

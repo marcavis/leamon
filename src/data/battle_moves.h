@@ -13824,10 +13824,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_VOID_TRAIL] =
     {
         .power = 50,
-        .effect = EFFECT_BURN_HIT, //TODO: CUSTOM
+        .effect = EFFECT_VOID_TRAIL,
         .type = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 15,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -13894,7 +13894,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_LUCENT_BEAM] =
     {
         .effect = EFFECT_LUCENT_BEAM,
-        .power = 35, //meant to be 100
+        .power = 100,
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 10,

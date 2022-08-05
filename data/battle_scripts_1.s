@@ -417,6 +417,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectAuralysis               @ EFFECT_AURALYSIS
 	.4byte BattleScript_EffectConniption              @ EFFECT_CONNIPTION
 	.4byte BattleScript_EffectLucentBeam              @ EFFECT_LUCENT_BEAM
+	.4byte BattleScript_EffectHit                     @ EFFECT_VOID_TRAIL
 
 BattleScript_EffectSteelBeam::
 	attackcanceler
