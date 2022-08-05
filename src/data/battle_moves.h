@@ -13838,7 +13838,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_PRISM_FEATHER] =
     {
         .effect = EFFECT_PRISM_FEATHER,
-        .power = 60,
+        .power = 70,
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 10,
