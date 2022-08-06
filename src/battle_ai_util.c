@@ -77,6 +77,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_EMERGENCY_EXIT] = 3,
     [ABILITY_FAIRY_AURA] = 6,
     [ABILITY_FILTER] = 6,
+    [ABILITY_FIRST_CHORUS] = 4,
     [ABILITY_FLAME_BODY] = 4,
     [ABILITY_FLARE_BOOST] = 5,
     [ABILITY_FLASH_FIRE] = 6,
@@ -350,6 +351,8 @@ static const u16 sEncouragedEncoreEffects[] =
     EFFECT_WATER_SPORT,
     EFFECT_DRAGON_DANCE,
     EFFECT_CAMOUFLAGE,
+    EFFECT_DARK_ALLURE,
+    EFFECT_AURALYSIS,
 };
 
 // For the purposes of determining the most powerful move in a moveset, these
