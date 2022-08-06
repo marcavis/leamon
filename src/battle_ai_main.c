@@ -2623,6 +2623,19 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         score += 3;
                 }
             }
+            //Or maybe Aura Crash
+            if (AI_DATA->abilities[battlerAtk] == ABILITY_AURA_CRASH)
+            {
+                if (AI_WhoStrikesFirst(battlerAtk, battlerAtkPartner, move) == AI_IS_SLOWER)   // Partner moving first
+                {
+                    // discourage raising our special attack since it's about to be maxed out
+                    if (IsSpecialAttackBoostMoveEffect(effect))
+                        score -= 3;
+                    // encourage moves hitting multiple opponents
+                    if (!IS_MOVE_STATUS(move) && (moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
+                        score += 3;
+                }
+            }
             break;
         }
     } // check partner move effect

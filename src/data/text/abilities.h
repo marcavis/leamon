@@ -256,6 +256,7 @@ static const u8 sAsOneIceRiderDescription[] = _("Unnerve and Chilling Neigh.");
 static const u8 sAsOneShadowRiderDescription[] = _("Unnerve and Grim Neigh.");
 static const u8 sAmuletLinkDescription[] = _("Special hits raise speed.");
 static const u8 sFirstChorusDescription[] = _("Sound moves get priority.");
+static const u8 sAuraCrashDescription[] = _("Critical hits raise Sp. Atk.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -530,6 +531,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
     [ABILITY_AMULET_LINK] = _("Amulet Link"),
     [ABILITY_FIRST_CHORUS] = _("First Chorus"),
+    [ABILITY_AURA_CRASH] = _("Aura Crash"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -804,6 +806,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
     [ABILITY_AMULET_LINK] = _("Amulet Link"),
     [ABILITY_FIRST_CHORUS] = _("First Chorus"),
+    [ABILITY_AURA_CRASH] = _("Aura Crash"),
 };
 #endif
 
@@ -1079,4 +1082,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_AS_ONE_SHADOW_RIDER] = sAsOneShadowRiderDescription,
     [ABILITY_AMULET_LINK] = sAmuletLinkDescription,
     [ABILITY_FIRST_CHORUS] = sFirstChorusDescription,
+    [ABILITY_AURA_CRASH] = sAuraCrashDescription,
 };

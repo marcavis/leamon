@@ -37,6 +37,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ARENA_TRAP] = 9,
     [ABILITY_AROMA_VEIL] = 3,
     [ABILITY_AURA_BREAK] = 3,
+    [ABILITY_AURA_CRASH] = 4,
     [ABILITY_BAD_DREAMS] = 4,
     [ABILITY_BATTERY] = 0,
     [ABILITY_BATTLE_ARMOR] = 2,
@@ -2032,6 +2033,24 @@ bool32 IsAttackBoostMoveEffect(u16 effect)
     case EFFECT_COIL:
     case EFFECT_BELLY_DRUM:
     case EFFECT_BULK_UP:
+    case EFFECT_GROWTH:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+// for aura crash
+// we could include Calm Mind, but the AI may still want to raise sp.def.
+bool32 IsSpecialAttackBoostMoveEffect(u16 effect)
+{
+    switch (effect)
+    {
+    case EFFECT_SPECIAL_ATTACK_UP:
+    case EFFECT_SPECIAL_ATTACK_UP_2:
+    case EFFECT_SPECIAL_ATTACK_UP_3:
+    case EFFECT_ATTACK_SPATK_UP:
+    case EFFECT_QUIVER_DANCE:
     case EFFECT_GROWTH:
         return TRUE;
     default:
