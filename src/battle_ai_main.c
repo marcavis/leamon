@@ -616,6 +616,14 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         {
             RETURN_SCORE_MINUS(20);
         }
+
+        //check fairy immunity - I wonder if this is redundant
+        if (moveType == TYPE_FAIRY
+          && (AI_DATA->abilities[battlerDef] == ABILITY_OPPRESSION_AURA
+          && !DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move)))
+        {
+            RETURN_SCORE_MINUS(20);
+        }
         
         // check off screen
         if (IsSemiInvulnerable(battlerDef, move) && moveEffect != EFFECT_SEMI_INVULNERABLE && AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER)

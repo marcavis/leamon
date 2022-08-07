@@ -258,6 +258,7 @@ static const u8 sAmuletLinkDescription[] = _("Special hits raise speed.");
 static const u8 sFirstChorusDescription[] = _("Sound moves get priority.");
 static const u8 sAuraCrashDescription[] = _("Critical hits raise Sp. Atk.");
 static const u8 sGladHandingDescription[] = _("Contact can lower Sp. Atk.");
+static const u8 sOppressionAuraDescription[] = _("Immunity to Fairy attacks.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -534,6 +535,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRST_CHORUS] = _("First Chorus"),
     [ABILITY_AURA_CRASH] = _("Aura Crash"),
     [ABILITY_GLAD_HANDING] = _("Glad-Handing"),
+    [ABILITY_OPPRESSION_AURA] = _("Oppression Aura"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -810,6 +812,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FIRST_CHORUS] = _("First Chorus"),
     [ABILITY_AURA_CRASH] = _("Aura Crash"),
     [ABILITY_GLAD_HANDING] = _("Glad-Handing"),
+    [ABILITY_OPPRESSION_AURA] = _("OppressAura"),
 };
 #endif
 
@@ -1087,4 +1090,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_FIRST_CHORUS] = sFirstChorusDescription,
     [ABILITY_AURA_CRASH] = sAuraCrashDescription,
     [ABILITY_GLAD_HANDING] = sGladHandingDescription,
+    [ABILITY_OPPRESSION_AURA] = sOppressionAuraDescription,
 };
