@@ -93,6 +93,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_FUR_COAT] = 7,
     [ABILITY_GALE_WINGS] = 6,
     [ABILITY_GALVANIZE] = 8,
+    [ABILITY_GLAD_HANDING] = 4,
     [ABILITY_GLUTTONY] = 3,
     [ABILITY_GOOEY] = 5,
     [ABILITY_GRASS_PELT] = 2,
