@@ -8658,6 +8658,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     u16 atkBaseSpeciesId;
     u8 i;
     u16 eggPower;
+    struct Pokemon *party = (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER) ? gPlayerParty : gEnemyParty;
 
     atkBaseSpeciesId = GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species);
 
@@ -8755,7 +8756,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
         eggPower = UQ_4_12(1.0);
         for (i = 0; i < PARTY_SIZE; i++)
         {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) == SPECIES_EGG) {
+            if (GetMonData(&party[i], MON_DATA_SPECIES2, NULL) == SPECIES_EGG) {
                 eggPower += UQ_4_12(0.2);
             }
         }
