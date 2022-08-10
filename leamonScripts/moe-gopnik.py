@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #do not put spaces between the variable and the value!
 #e.g. SPECIES=CYuria, not SPECIES = "CYuria" (the quotes are not needed)
-species="Lea"
-images="leamon/lea"
+species="Moe-G"
+images="leamon/moe-gopnik"
 animate=[(0,1)] #must be a list of tuples, like [(0,10),(1,20)]
 frontSpriteSize = (64,64)
 frontYOffset = 0
@@ -19,39 +19,39 @@ pokedexText = [
 ""]
 
 pokedexCategory="Deer"
-pokedexHeight=16 #in meters/10
-pokedexWeight=580 #in kilos/10
+pokedexHeight=15 #in meters/10
+pokedexWeight=450 #in kilos/10
 pokemonScale=256
 pokemonOffset=0
 trainerScale=256
 trainerOffset=0
 
 
-baseHP=100
-baseAttack=60
+baseHP=70
+baseAttack=90
 baseDefense=80
-baseSpAttack=55
-baseSpDefense=70
-baseSpeed=75
+baseSpAttack=40
+baseSpDefense=40
+baseSpeed=80
 type1="TYPE_NORMAL"
-type2="TYPE_NORMAL"
+type2="TYPE_DARK"
 catchRate=150
-expYield=108
-evHP=2
+expYield=90
+evHP=0
 evAttack=0
 evDefense=0 
-evSpeed=0
+evSpeed=1
 evSpAttack=0
 evSpDefense=0
 item1="ITEM_NONE"
 item2="ITEM_NONE"
-genderRatio="PERCENT_FEMALE(50)"
+genderRatio="PERCENT_FEMALE(25)"
 eggCycles=20
 friendship=70
 growthRate="GROWTH_MEDIUM_SLOW"
 eggGroup1="EGG_GROUP_HUMAN_LIKE"
 eggGroup2="EGG_GROUP_HUMAN_LIKE"
-ability1="ABILITY_NEST_DEFENDER"
+ability1="ABILITY_INSOMNIA"
 ability2="ABILITY_NONE"
 ability3="ABILITY_NONE"
 bodyColor="BODY_COLOR_BROWN"
