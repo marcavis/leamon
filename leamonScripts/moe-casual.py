@@ -13,7 +13,7 @@ backAnim = "BACK_ANIM_H_VIBRATE"
 iconPalette = 0 #0, 1 or 2
 #don't put newlines in here
 pokedexText = [
-"Unassuming, always open to new\n",
+"Unassuming, always open to new\\n",
 "experiences and adventures.",
 "",
 ""]
@@ -52,7 +52,7 @@ growthRate="GROWTH_MEDIUM_SLOW"
 eggGroup1="EGG_GROUP_HUMAN_LIKE"
 eggGroup2="EGG_GROUP_HUMAN_LIKE"
 ability1="ABILITY_VITAL_SPIRIT"
-ability2="ABILITY_NONE"
+ability2="ABILITY_CUTE_CHARM"
 ability3="ABILITY_NONE"
 bodyColor="BODY_COLOR_BROWN"
 noFlip="FALSE"
