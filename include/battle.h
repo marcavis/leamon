@@ -94,6 +94,7 @@ struct DisableStruct
     u8 rechargeTimer;
     u8 autotomizeCount;
     u8 slowStartTimer;
+    u8 overtimeTimer;
     u8 embargoTimer;
     u8 magnetRiseTimer;
     u8 telekinesisTimer;

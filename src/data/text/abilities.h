@@ -260,6 +260,7 @@ static const u8 sAuraCrashDescription[] = _("Critical hits raise Sp. Atk.");
 static const u8 sGladHandingDescription[] = _("Contact can lower Sp. Atk.");
 static const u8 sOppressionAuraDescription[] = _("Immunity to Fairy attacks.");
 static const u8 sNestDefenderDescription[] = _("Eggs in party raise power.");
+static const u8 sOvertimeDescription[] = _("Powers up after 8 turns.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -538,6 +539,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GLAD_HANDING] = _("Glad-Handing"),
     [ABILITY_OPPRESSION_AURA] = _("Oppression Aura"),
     [ABILITY_NEST_DEFENDER] = _("Nest Defender"),
+    [ABILITY_OVERTIME] = _("Overtime"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -816,6 +818,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GLAD_HANDING] = _("Glad-Handing"),
     [ABILITY_OPPRESSION_AURA] = _("OppressAura"),
     [ABILITY_NEST_DEFENDER] = _("NestDefender"),
+    [ABILITY_OVERTIME] = _("Overtime"),
 };
 #endif
 
@@ -1095,4 +1098,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_GLAD_HANDING] = sGladHandingDescription,
     [ABILITY_OPPRESSION_AURA] = sOppressionAuraDescription,
     [ABILITY_NEST_DEFENDER] = sNestDefenderDescription,
+    [ABILITY_OVERTIME] = sOvertimeDescription,
 };

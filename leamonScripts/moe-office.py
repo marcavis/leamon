@@ -51,7 +51,7 @@ friendship=70
 growthRate="GROWTH_MEDIUM_SLOW"
 eggGroup1="EGG_GROUP_HUMAN_LIKE"
 eggGroup2="EGG_GROUP_HUMAN_LIKE"
-ability1="ABILITY_INSOMNIA"
+ability1="ABILITY_OVERTIME"
 ability2="ABILITY_NONE"
 ability3="ABILITY_NONE"
 bodyColor="BODY_COLOR_BROWN"
@@ -67,13 +67,12 @@ static const struct LevelUpMove s""" + species + """LevelUpLearnset[] = {
     LEVEL_UP_MOVE(12, MOVE_YAWN),
     LEVEL_UP_MOVE(16, MOVE_PSYBEAM),
     LEVEL_UP_MOVE(21, MOVE_WORRY_SEED),
+    LEVEL_UP_MOVE(25, MOVE_CRUNCH),
     LEVEL_UP_MOVE(29, MOVE_ZEN_HEADBUTT),
     LEVEL_UP_MOVE(36, MOVE_PAYBACK),
     LEVEL_UP_MOVE(48, MOVE_DREAM_EATER),
     LEVEL_UP_END
 };"""
-
-
 
 import newmon
 newmon.main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize, backYOffset, frontAnim, backAnim,iconPalette, pokedexText, pokedexCategory, pokedexHeight, pokedexWeight, pokemonScale, pokemonOffset, trainerScale, trainerOffset, baseHP, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, type1, type2, catchRate, expYield, evHP, evAttack, evDefense, evSpeed, evSpAttack, evSpDefense, item1, item2, genderRatio, eggCycles, friendship, growthRate, eggGroup1, eggGroup2, ability1, ability2, ability3, bodyColor, noFlip, learnset)

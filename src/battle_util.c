@@ -216,6 +216,8 @@ static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
     ABILITY_GULP_MISSILE,
 };
 
+static const u8 sOvertimeTurnStartingPoint = 8;
+
 bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
 {
     u32 ability = GetBattlerAbility(battlerAtk);
@@ -2602,6 +2604,7 @@ enum
     ENDTURN_POWDER,
     ENDTURN_THROAT_CHOP,
     ENDTURN_SLOW_START,
+    ENDTURN_OVERTIME,
     ENDTURN_PLASMA_FISTS,
     ENDTURN_BATTLER_COUNT
 };
@@ -3123,6 +3126,16 @@ u8 DoBattlerEndTurnEffects(void)
                 && ability == ABILITY_SLOW_START)
             {
                 BattleScriptExecute(BattleScript_SlowStartEnds);
+                effect++;
+            }
+            gBattleStruct->turnEffectsTracker++;
+            break;
+        case ENDTURN_OVERTIME:
+            if (gDisableStructs[gActiveBattler].overtimeTimer < sOvertimeTurnStartingPoint
+                && ++gDisableStructs[gActiveBattler].overtimeTimer == sOvertimeTurnStartingPoint
+                && ability == ABILITY_OVERTIME)
+            {
+                BattleScriptExecute(BattleScript_OvertimeEnters);
                 effect++;
             }
             gBattleStruct->turnEffectsTracker++;
@@ -8724,6 +8737,10 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
         if (gDisableStructs[battlerAtk].slowStartTimer != 0)
             MulModifier(&modifier, UQ_4_12(0.5));
         break;
+    case ABILITY_OVERTIME:
+        if (gDisableStructs[battlerAtk].overtimeTimer == sOvertimeTurnStartingPoint)
+            MulModifier(&modifier, UQ_4_12(1.5));
+        break;
     case ABILITY_SOLAR_POWER:
         if (IS_MOVE_SPECIAL(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN))
             MulModifier(&modifier, UQ_4_12(1.5));
@@ -8967,7 +8984,12 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         if (gBattleMoves[move].flags & FLAG_SOUND)
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
+    case ABILITY_OVERTIME:
+        if (gDisableStructs[battlerDef].overtimeTimer == sOvertimeTurnStartingPoint)
+            MulModifier(&modifier, UQ_4_12(1.5));
+        break;
     }
+    
 
     // ally's abilities
     if (IsBattlerAlive(BATTLE_PARTNER(battlerDef)))

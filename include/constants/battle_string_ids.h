@@ -628,8 +628,9 @@
 #define STRINGID_CONNIPTIONFAILEDMESSAGE              626
 #define STRINGID_ABILITYRAISEDSTATSHARPLY             627
 #define STRINGID_PKMNMAKESFAIRYMISS                   628
+#define STRINGID_OVERTIMEENTERS                       629
 
-#define BATTLESTRINGS_COUNT                           629
+#define BATTLESTRINGS_COUNT                           630
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
