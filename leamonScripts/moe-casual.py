@@ -13,7 +13,7 @@ backAnim = "BACK_ANIM_H_VIBRATE"
 iconPalette = 0 #0, 1 or 2
 #don't put newlines in here
 pokedexText = [
-"Unassuming, always open to new\\n",
+"Unassuming, always open to new",
 "experiences and adventures.",
 "",
 ""]
