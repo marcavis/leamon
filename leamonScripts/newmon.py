@@ -404,9 +404,9 @@ def main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize
         if evSpDefense > 0:
             line += tab + tab + ".evYield_SpDefense = " + str(evSpDefense) + ",\n"
         if item1 != "ITEM_NONE":
-            line += tab + tab + ".item1 = " + str(item1) + ",\n"
+            line += tab + tab + ".itemCommon = " + str(item1) + ",\n"
         if item2 != "ITEM_NONE":
-            line += tab + tab + ".item2 = " + str(item2) + ",\n"
+            line += tab + tab + ".itemRare = " + str(item2) + ",\n"
         line += tab + tab + ".genderRatio = " + genderRatio + ",\n"
         line += tab + tab + ".eggCycles = " + str(eggCycles) + ",\n"
         line += tab + tab + ".friendship = " + str(friendship) + ",\n"
