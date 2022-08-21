@@ -8,13 +8,23 @@ def main(filename):
         print ("File", filename, "is not a valid ODS spreadsheet")
         return
 
+    #Defaults, needed by some other sheets
+    try:
+        defaultsPage = data["Defaults"]
+    except:
+        print ("File", filename, "has no Defaults sheet")
+        return
+
     #Stats
     try:
         statsPage = data["Stats"]
     except:
         print ("File", filename, "has no Stats sheet")
         return
+
     statsPage = [x for x in statsPage if x!=[]]
+    monTotal = len(statsPage) - 2
+
     sCols = [
         'species',
         'baseHp',
@@ -119,7 +129,8 @@ def main(filename):
         #filled in than expected
         line = line + [""] * (len(default) - len(line))
         print("Outputting to {}.py".format(line[0]))
-        for i in range(len(pCols)):
+        #ignore species
+        for i in range(1, len(pCols)):
             if line[i] == "":
                 line[i] = default[i]
             
@@ -136,5 +147,52 @@ def main(filename):
                 print(pCols[i] + '="' + str(line[i]) + '"')
     
     #Images
+    try:
+        imagePage = data["Images"]
+    except:
+        print ("File", filename, "has no Image sheet")
+        return
+    imagePage = [x for x in imagePage if x!=[]]
+    iCols = [   
+        'species',
+        'folder',
+        'frontAnim',
+        'backAnim',
+        'iconPalette'
+        ]
+    default = ['error', 'error',
+    defaultsPage[5][5], defaultsPage[6][5], 0]
+
+    for line in imagePage[2:]:
+        #add 0 or more empty columns in case the data has fewer values
+        #filled in than expected
+        line = line + [""] * (len(default) - len(line))
+        print("Outputting to {}.py".format(line[0]))
+        #ignore species
+        for i in range(1, len(iCols)):
+            if line[i] == "":
+                line[i] = default[i]
+
+            if iCols[i] == "folder":
+                line[i] = defaultsPage[7][5] + "/" + line[i]
+            
+            print(iCols[i] + '="' + str(line[i]) + '"')
+
+    #LevelUpLearnset
+    try:
+        lulPage = data["Learnset"]
+    except:
+        print ("File", filename, "has no Learnset sheet")
+        return
+    for i in range(len(lulPage)):
+        if len(lulPage[i]) < len(lulPage[2]):
+            lulPage[i] += [""] * (len(lulPage[2]) - len(lulPage[i]))
+    #print(lulPage)
+    for col in range(1, monTotal * 2 + 2, 2):
+        for line in range(2, len(lulPage)):
+            if lulPage[line][col] != "":
+                print(lulPage[line][col], lulPage[line][col+1])
+    
+
 if __name__ == "__main__":
     main(sys.argv[1])
