@@ -197,7 +197,10 @@ def main(filename):
             if iCols[i] == "images":
                 line[i] = defaultsPage[7][5] + "/" + line[i]
             
-            thisSpecies.append(iCols[i] + '="' + str(line[i]) + '"')
+            if iCols[i] == "animate":
+                thisSpecies.append(iCols[i] + '=' + str(line[i]))
+            else:
+                thisSpecies.append(iCols[i] + '="' + str(line[i]) + '"')
 
     #LevelUpLearnset
     try:
