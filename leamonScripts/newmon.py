@@ -1,4 +1,4 @@
-def main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize, backYOffset, frontAnim, backAnim,iconPalette, pokedexText, pokedexCategory, pokedexHeight, pokedexWeight, pokemonScale, pokemonOffset, trainerScale, trainerOffset, baseHP, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, type1, type2, catchRate, expYield, evHP, evAttack, evDefense, evSpeed, evSpAttack, evSpDefense, item1, item2, genderRatio, eggCycles, friendship, growthRate, eggGroup1, eggGroup2, ability1, ability2, ability3, bodyColor, noFlip, learnset):
+def main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize, backYOffset, frontAnim, backAnim,iconPalette, pokedexText, pokedexCategory, pokedexHeight, pokedexWeight, pokemonScale, pokemonOffset, trainerScale, trainerOffset, baseHP, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, type1, type2, catchRate, expYield, evHP, evAttack, evDefense, evSpeed, evSpAttack, evSpDefense, itemCommon, itemRare, genderRatio, eggCycles, friendship, growthRate, eggGroup1, eggGroup2, ability1, ability2, ability3, bodyColor, noFlip, learnset):
     #declare sprites
     counter = 0
     with open("include/graphics.h", "r") as in_file:
@@ -403,10 +403,10 @@ def main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize
             line += tab + tab + ".evYield_SpAttack = " + str(evSpAttack) + ",\n"
         if evSpDefense > 0:
             line += tab + tab + ".evYield_SpDefense = " + str(evSpDefense) + ",\n"
-        if item1 != "ITEM_NONE":
-            line += tab + tab + ".itemCommon = " + str(item1) + ",\n"
-        if item2 != "ITEM_NONE":
-            line += tab + tab + ".itemRare = " + str(item2) + ",\n"
+        if itemCommon != "ITEM_NONE":
+            line += tab + tab + ".itemCommon = " + str(itemCommon) + ",\n"
+        if itemRare != "ITEM_NONE":
+            line += tab + tab + ".itemRare = " + str(itemRare) + ",\n"
         line += tab + tab + ".genderRatio = " + genderRatio + ",\n"
         line += tab + tab + ".eggCycles = " + str(eggCycles) + ",\n"
         line += tab + tab + ".friendship = " + str(friendship) + ",\n"
