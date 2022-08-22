@@ -101,7 +101,10 @@ def main(filename):
             elif 'growthRate' in sCols[i]:
                 line[i] = 'GROWTH_' + line[i].upper().replace(" ", "_")
             
-            thisSpecies.append(sCols[i] + '="' + str(line[i]) + '"')
+            if sCols[i][:4] == "base" or sCols[i][:2] == "ev":
+                thisSpecies.append(sCols[i] + '=' + str(line[i]))
+            else:
+                thisSpecies.append(sCols[i] + '="' + str(line[i]) + '"')
     
     #Pokedex
     try:
