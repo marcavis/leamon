@@ -25,9 +25,14 @@ def main(filename):
     statsPage = [x for x in statsPage if x!=[]]
     monTotal = len(statsPage) - 2
 
+    outDict = {}
+    for mon in range(2, len(statsPage)):
+        outDict[statsPage[mon][0]] = ["#!/usr/bin/python"]
+
+
     sCols = [
         'species',
-        'baseHp',
+        'baseHP',
         'baseAttack',
         'baseDefense',
         'baseSpAttack',
@@ -39,7 +44,7 @@ def main(filename):
         'ability1',
         'ability2',
         'ability3',
-        'evHp',
+        'evHP',
         'evAttack',
         'evDefense',
         'evSpAttack',
@@ -66,7 +71,9 @@ def main(filename):
         #add 0 or more empty columns in case the data has fewer values
         #filled in than expected
         line = line + [""] * (len(default) - len(line))
-        print("Outputting to {}.py".format(line[0]))
+
+        thisSpecies = outDict[line[0]]
+        #print("Outputting to {}.py".format(line[0]))
         for i in range(len(sCols)):
             if 'type' in sCols[i]:
                 line[i] = "TYPE_" + line[i].upper()
@@ -94,7 +101,7 @@ def main(filename):
             elif 'growthRate' in sCols[i]:
                 line[i] = 'GROWTH_' + line[i].upper().replace(" ", "_")
             
-            print(sCols[i] + '="' + str(line[i]) + '"')
+            thisSpecies.append(sCols[i] + '="' + str(line[i]) + '"')
     
     #Pokedex
     try:
@@ -128,23 +135,25 @@ def main(filename):
         #add 0 or more empty columns in case the data has fewer values
         #filled in than expected
         line = line + [""] * (len(default) - len(line))
-        print("Outputting to {}.py".format(line[0]))
+
+        thisSpecies = outDict[line[0]]
+        #print("Outputting to {}.py".format(line[0]))
         #ignore species
         for i in range(1, len(pCols)):
             if line[i] == "":
                 line[i] = default[i]
             
             if 'pokedexText1' == pCols[i]:
-                print("pokedexText = [")
-                print('"' + line[i] + '",')
-                print('"' + line[i+1] + '",')
-                print('"' + line[i+2] + '",')
-                print('"' + line[i+3] + '"]')
+                thisSpecies.append("pokedexText = [")
+                thisSpecies.append('"' + line[i] + '",')
+                thisSpecies.append('"' + line[i+1] + '",')
+                thisSpecies.append('"' + line[i+2] + '",')
+                thisSpecies.append('"' + line[i+3] + '"]')
             elif 'bodyColor' in pCols[i]:
                 line[i] = 'BODY_COLOR_' + line[i].upper().replace(" ", "_")
             
             if 'pokedexText' not in pCols[i]:
-                print(pCols[i] + '="' + str(line[i]) + '"')
+                thisSpecies.append(pCols[i] + '="' + str(line[i]) + '"')
     
     #Images
     try:
@@ -155,28 +164,37 @@ def main(filename):
     imagePage = [x for x in imagePage if x!=[]]
     iCols = [   
         'species',
-        'folder',
+        'images',
         'frontAnim',
         'backAnim',
-        'iconPalette'
+        'iconPalette',
+        'animate',
+        'frontSpriteSize',
+        'frontYOffset',
+        'backSpriteSize',
+        'backYOffset'
         ]
     default = ['error', 'error',
-    defaultsPage[5][5], defaultsPage[6][5], 0]
+    defaultsPage[5][5], defaultsPage[6][5], 0,
+    defaultsPage[0][5], defaultsPage[1][5], defaultsPage[2][5],
+    defaultsPage[3][5], defaultsPage[4][5]]
 
     for line in imagePage[2:]:
         #add 0 or more empty columns in case the data has fewer values
         #filled in than expected
         line = line + [""] * (len(default) - len(line))
-        print("Outputting to {}.py".format(line[0]))
+
+        thisSpecies = outDict[line[0]]
+        #print("Outputting to {}.py".format(line[0]))
         #ignore species
         for i in range(1, len(iCols)):
             if line[i] == "":
                 line[i] = default[i]
 
-            if iCols[i] == "folder":
+            if iCols[i] == "images":
                 line[i] = defaultsPage[7][5] + "/" + line[i]
             
-            print(iCols[i] + '="' + str(line[i]) + '"')
+            thisSpecies.append(iCols[i] + '="' + str(line[i]) + '"')
 
     #LevelUpLearnset
     try:
@@ -184,15 +202,26 @@ def main(filename):
     except:
         print ("File", filename, "has no Learnset sheet")
         return
-    for i in range(len(lulPage)):
-        if len(lulPage[i]) < len(lulPage[2]):
-            lulPage[i] += [""] * (len(lulPage[2]) - len(lulPage[i]))
+
     #print(lulPage)
-    for col in range(1, monTotal * 2 + 2, 2):
-        for line in range(2, len(lulPage)):
-            if lulPage[line][col] != "":
-                print(lulPage[line][col], lulPage[line][col+1])
-    
+    for line in range(2, monTotal * 2 + 1, 2):
+        thisSpecies = outDict[lulPage[line][0]]
+        #print("Outputting to {}.py".format(lulPage[line][0]))
+        thisSpecies.append('learnset="""')
+        thisSpecies.append('static const struct LevelUpMove s{}LevelUpLearnset[] ='.format(lulPage[line][0]) + ' {')
+        for col in range(2, len(lulPage[line])):
+            out = "\tLEVEL_UP_MOVE({:>2}, MOVE_{}),"
+            moveName = lulPage[line+1][col].upper().replace(" ","_")
+            thisSpecies.append(out.format(lulPage[line][col], moveName))
+        thisSpecies.append('\tLEVEL_UP_END')
+        thisSpecies.append('};"""')
+
+    for mon in outDict:
+        outDict[mon].append("import newmon")
+        outDict[mon].append("newmon.main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize, backYOffset, frontAnim, backAnim,iconPalette, pokedexText, pokedexCategory, pokedexHeight, pokedexWeight, pokemonScale, pokemonOffset, trainerScale, trainerOffset, baseHP, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, type1, type2, catchRate, expYield, evHP, evAttack, evDefense, evSpeed, evSpAttack, evSpDefense, item1, item2, genderRatio, eggCycles, friendship, growthRate, eggGroup1, eggGroup2, ability1, ability2, ability3, bodyColor, noFlip, learnset)")
+        with open("add_" + mon + ".py", "w") as out_file:
+            for line in outDict[mon]:
+                out_file.write(line+"\n")
 
 if __name__ == "__main__":
     main(sys.argv[1])
