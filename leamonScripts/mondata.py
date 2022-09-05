@@ -222,6 +222,26 @@ def main(filename):
         thisSpecies.append('\tLEVEL_UP_END')
         thisSpecies.append('};"""')
 
+    #Evolutions
+    try:
+        evoPage = data["Evo"]
+    except:
+        print ("File", filename, "has no Evolution sheet")
+        return
+
+    evoPage = [x for x in evoPage if x!=[]]
+
+    for line in evoPage[2:]:
+        thisSpecies = outDict[line[0]]
+        #print("Outputting to {}.py".format(line[0]))
+        #ignore species
+        for i in range(1, len(line), 3):
+            method = "EVO_" + line[i].upper()
+            targetSpecies = "SPECIES_" + line[i+2].upper()
+
+            thisSpecies.append("evomethod" + '="' + method + str(line[i+1]) + targetSpecies)
+            print("evomethod" + '="' + method + str(line[i+1]) + targetSpecies)
+
     for mon in outDict:
         outDict[mon].append("import newmon")
         outDict[mon].append("newmon.main(species, images, animate, frontSpriteSize, frontYOffset, backSpriteSize, backYOffset, frontAnim, backAnim,iconPalette, pokedexText, pokedexCategory, pokedexHeight, pokedexWeight, pokemonScale, pokemonOffset, trainerScale, trainerOffset, baseHP, baseAttack, baseDefense, baseSpAttack, baseSpDefense, baseSpeed, type1, type2, catchRate, expYield, evHP, evAttack, evDefense, evSpeed, evSpAttack, evSpDefense, itemCommon, itemRare, genderRatio, eggCycles, friendship, growthRate, eggGroup1, eggGroup2, ability1, ability2, ability3, bodyColor, noFlip, learnset)")
