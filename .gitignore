@@ -20,6 +20,9 @@
 sound/**/*.bin
 sound/songs/midi/*.s
 tools/agbcc
+leamonScripts/add_*.py
+leamonScripts/*lock.mondata*
+leamonScripts/__pycache__
 *.map
 *.ld
 *.bat
