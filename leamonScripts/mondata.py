@@ -239,8 +239,8 @@ def main(filename):
             method = "EVO_" + line[i].upper()
             targetSpecies = "SPECIES_" + line[i+2].upper()
 
-            thisSpecies.append("evomethod" + '="' + method + str(line[i+1]) + targetSpecies)
-            print("evomethod" + '="' + method + str(line[i+1]) + targetSpecies)
+            thisSpecies.append("evomethod" + '="' + method + str(line[i+1]) + targetSpecies + '"')
+            #print("evomethod" + '="' + method + str(line[i+1]) + targetSpecies)
 
     for mon in outDict:
         outDict[mon].append("import newmon")
